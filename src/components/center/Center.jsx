@@ -2,11 +2,11 @@ import React from 'react'
 import "./Center.css";
 import Nav from '../Nav/Nav';
 
-const Center = () => {
+const Center = ({ toggleSidebar}) => {
     return (
         <div className='center'>
             <div className='nav-bar'>
-                <Nav/>
+                <Nav  toggleSidebar={toggleSidebar}/>
             </div>
         </div>
     )

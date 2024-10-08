@@ -6,11 +6,11 @@ import Sun from '../../assets/Sun.svg';
 import Clock from '../../assets/Clock_Backward.svg'
 import Bell from '../../assets/Bell.svg'
 
-const Nav = () => {
+const Nav = ({toogleSidebar}) => {
     return (
         <div className='Contianer'>
             <div className='side-container'>
-            <img src={Sidebar} alt="sidebar" />
+            <img src={Sidebar} alt="sidebar" className='sidebar' onClick={toogleSidebar} />
             <img src={Star} alt='Star'/>
             </div>
             <div className='search-container'>

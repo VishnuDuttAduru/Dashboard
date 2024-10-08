@@ -10,9 +10,11 @@ import Multiple_User from "../../assets/Multiple_Users.svg";
 import Broadcast from "../../assets/Broadcast.svg";
 import Chats from "../../assets/Chats.svg";
 
-const LeftBar = () => {
+const LeftBar = ({isOpen}) => {
+
+
   return (
-    <div className="left-bar">
+    <div className={`left-bar ${isOpen ? 'open' :"closed"}`} >
       <div className="user-section">
         <img src={user} alt="User" className="user-icon" />
         <h2>ByeWind</h2>
