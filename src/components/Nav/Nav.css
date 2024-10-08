@@ -1,0 +1,14 @@
+.Contianer{
+    display: flex;
+    justify-content: space-between;
+    margin: 1em;
+}
+.search-container{
+    display: flex;
+    margin: 0.4em;
+    gap: 1em;
+}
+.side-container{
+    display: flex;
+    margin: 0.4em;
+}
