@@ -1,11 +1,12 @@
 import React from 'react'
 import "./Center.css";
+import Nav from '../Nav/Nav';
 
 const Center = () => {
     return (
         <div className='center'>
             <div className='nav-bar'>
-                <h2>Navbar</h2>
+                <Nav/>
             </div>
         </div>
     )
