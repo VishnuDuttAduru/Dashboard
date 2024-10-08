@@ -1,0 +1,9 @@
+.center {
+    flex: 3;
+    border-right: 1px solid lightgray;
+}
+
+.nav-bar {
+    height: 5vh;
+    border-bottom: 1px solid lightgrey;
+}
