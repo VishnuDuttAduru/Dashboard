@@ -1,0 +1,45 @@
+/* Notification.css */
+.notifications-and-activities {
+    padding: 20px;
+  }
+  .h2{
+    text-align: start;
+    font-size: 17px;
+    font-weight: 600;
+  }
+  .notifications-list {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .notification-item {
+    display: flex;
+    align-items: flex-start; /* Align icon and message vertically */
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+  }
+  
+  .notification-icon {
+    font-size: 20px;
+    background-color: rgb(121, 190, 239);
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+  
+  .notification-content {
+    display: flex;
+    flex-direction: column; /* Stack message and timestamp vertically */
+  }
+  
+  .notification-message {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .notification-timestamp {
+    font-size: 0.8em;
+    color: #888;
+    text-align: start;
+  }
+  
