@@ -34,14 +34,18 @@ const Contact = () => {
       name: "Karay Okumus",
     },
   ];
-  
+
   return (
     <div className="contact-container">
       <h2 className="contact-title">Contacts</h2>
       <ul className="contact-list">
         {contactList.map((contact, index) => (
           <li className="contact-item" key={index}>
-            <img src={contact.avatar} alt={contact.name} className="contact-avatar" />
+            <img
+              src={contact.avatar}
+              alt={contact.name}
+              className="contact-avatar"
+            />
             <span className="contact-name">{contact.name}</span>
           </li>
         ))}
