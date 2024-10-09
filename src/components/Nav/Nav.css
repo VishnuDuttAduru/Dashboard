@@ -7,12 +7,12 @@ body {
   
   .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 10px 20px;
     align-items: center;
   }
   
-  .side-container, .search-container {
+ .search-container {
     display: flex;
     align-items: center;
   }
