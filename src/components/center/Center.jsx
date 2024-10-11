@@ -20,7 +20,7 @@ const Center = () => {
     const isDarkMode = state?.darkMode;
     const handleToggleClick = () => {
         dispatch({ type: "TOGGLE" });
-    };
+    }
 
     return (
         <>
@@ -50,24 +50,43 @@ const Center = () => {
                 </div>
                 <div className={`center-content ${isDarkMode ? 'dark' : 'light'}`}>
                     <h2>eCommerce</h2>
-                    <div className={`chart-box-container ${isDarkMode ? 'dark' : 'light'}`}>
+                    <div
+                        className={`chart-box-container ${isDarkMode ? 'dark' : 'light'}`}
+                    >
                         <div className={`commerce-container ${isDarkMode ? 'dark' : 'light'}`}>
-                            {commerceRevenueDetails.map((item, index) => (
-                                <div
-                                    key={index}
-                                    className={`commerce-box ${isDarkMode ? 'dark' : ''}`}
-                                    style={{ backgroundColor: isDarkMode ? '#444' : item.backgroundColor }}
-                                >
-                                    <div className="commerce-box-content">
-                                        <h3>{item.title}</h3>
-                                        <p>{item.count}</p>
-                                        <div className="commerce-box-footer">
-                                            <img src={item.image} alt={`${item.title} icon`} />
-                                            <span>{item.percent}</span>
+                            {commerceRevenueDetails.map((item, index) => {
+                                let backgroundColor, color;
+
+                                if (isDarkMode) {
+                                    if (index === 0 || index === 3) {
+                                        backgroundColor = 'rgba(247, 249, 251, 1)';
+                                        color = 'black';
+                                    } else {
+                                        backgroundColor = 'rgba(54, 57, 63, 1)';
+                                        color = 'white';
+                                    }
+                                } else {
+                                    backgroundColor = item.backgroundColor;
+                                    color = 'black';
+                                }
+
+                                return (
+                                    <div
+                                        key={index}
+                                        className="commerce-box"
+                                        style={{ backgroundColor, color }}
+                                    >
+                                        <div className="commerce-box-content">
+                                            <h3>{item.title}</h3>
+                                            <p>{item.count}</p>
+                                            <div className="commerce-box-footer">
+                                                <img src={item.image} alt={`${item.title} icon`} />
+                                                <span>{item.percent}</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            ))}
+                                );
+                            })}
                         </div>
                         <div className={`chart-container ${isDarkMode ? 'dark' : 'light'}`}>
                             <h3>Projections Vs Actuals</h3>
