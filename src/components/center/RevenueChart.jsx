@@ -2,7 +2,7 @@ import React from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
-const RevenueChart = ({ isDarkMode }) => {
+const RevenueChart = () => {
     const options = {
         chart: {
             type: 'spline',

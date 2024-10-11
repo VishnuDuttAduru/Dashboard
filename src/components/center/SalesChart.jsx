@@ -3,7 +3,6 @@ import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
 const SalesChart = () => {
-    const totalValue = 638.72;
     const chartOptions = {
         chart: {
             type: "pie",
@@ -35,22 +34,22 @@ const SalesChart = () => {
                 data: [
                     {
                         name: "Direct",
-                        y: 300, // Example value, adjust to reflect your data
+                        y: 300,
                         color: "rgba(28, 28, 28, 1)",
                     },
                     {
                         name: "Affiliate",
-                        y: 150, // Example value, adjust to reflect your data
+                        y: 150,
                         color: "rgba(186, 237, 189, 1)",
                     },
                     {
                         name: "Sponsored",
-                        y: 120, // Example value, adjust to reflect your data
+                        y: 120,
                         color: "rgba(149, 164, 252, 1)",
                     },
                     {
                         name: "E-mail",
-                        y: 68.72, // Example value, adjust to reflect your data
+                        y: 68.72,
                         color: "rgba(177, 227, 255, 1)",
                     },
                 ],
