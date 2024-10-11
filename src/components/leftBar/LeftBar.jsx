@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./LeftBar.css";
 import user from "../../assets/User.svg";
 import Default from "../../assets/Default_Page_Icon.svg";
@@ -9,12 +9,14 @@ import Identification_Badge from "../../assets/Identification_Badge.svg";
 import Multiple_User from "../../assets/Multiple_Users.svg";
 import Broadcast from "../../assets/Broadcast.svg";
 import Chats from "../../assets/Chats.svg";
+import { themeContext } from "../../Context";
 
-const LeftBar = ({isOpen}) => {
-
+const LeftBar = () => {
+  const { state } = useContext(themeContext);
+  const isDarkMode = state?.darkMode;
 
   return (
-    <div className={`left-bar ${isOpen ? 'open' :"closed"}`} >
+    <div className={`left-bar ${isDarkMode ? 'dark' : 'light'}`} >
       <div className="user-section">
         <img src={user} alt="User" className="user-icon" />
         <h2>ByeWind</h2>
@@ -34,22 +36,27 @@ const LeftBar = ({isOpen}) => {
         <p className="section-title">Dashboards</p>
         <ul className="dashboard-values">
           <li className="dashboard-item">
+            <div className="black-piece"></div>
             <img src={Default} alt="Default" />
             <span>Default</span>
           </li>
           <li className="dashboard-item">
+            <div className="black-piece"></div>
             <img src={commerce} alt="Ecommerce" />
             <span>eCommerce</span>
           </li>
           <li className="dashboard-item">
+            <div className="black-piece"></div>
             <img src={Project} alt="Projects" />
             <span>Projects</span>
           </li>
           <li className="dashboard-item">
+            <div className="black-piece"></div>
             <img src={Online} alt="Online Courses" />
             <span>Online Courses</span>
           </li>
         </ul>
+
       </div>
 
       <div className="pages-section">

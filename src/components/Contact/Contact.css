@@ -1,7 +1,6 @@
 
 .contact-container {
-    padding-left: 20px;
-    max-width: 400px;
+    width: 80%;
     margin: 0 auto;
     background-color: #ffffff;
   }
@@ -16,8 +15,11 @@
   
   .contact-list {
     list-style-type: none;
-    padding: 0;
-    margin: 0;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
   }
   
   .contact-item {

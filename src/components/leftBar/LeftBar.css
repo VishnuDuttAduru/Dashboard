@@ -1,142 +1,159 @@
 .left-bar {
-    width: 200px;
-    background-color: #fff;
-    border-right: 1px solid lightgray;
-    padding: 20px;
-    position: fixed;
-    height: 100%;
-    transition: transform 0.3s ease;
-  }
-  
-  .user-section {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .user-icon {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-  }
-  
-  .fav-bar {
-    display: flex;
-    gap: 1.5em;
-    justify-content: start;
-    margin-bottom: 10px;
-  }
-  
-  .inactive {
-    color: #b0b0b0;
-  }
-  .fav-list {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    list-style-type: disc; 
-  }
-  
-  .fav-list li {
-    margin: 0;
-    text-align: start;
-    padding: 0;
-    cursor: pointer;
-  }
-  
-  
-  .fav-list li::marker {
-    color: #ccc;
-    margin-bottom: 10px;
-    cursor: pointer;
-  }
-  
-  .dashboard-section {
-    margin-bottom: 20px;
-  }
-  
-  .section-title {
-    font-weight: bold;
-    text-align: left;
-    color: #ccc;
-    margin-bottom: 10px;
-  }
-  
-  .dashboard-values {
-    list-style: none;
-    padding-left: 1em;
-  }
-  
-  .dashboard-item {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-  }
-  .dashboard-item:hover{
-    background-color: #ccc;
-    height: 40px;
-    border-radius: 15px;
-  }
-  .dashboard-item:hover::before{
-    content:"";
-    position:absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 100%;
-    width: 5px;
-    background-color: black;
-    border-radius: 2px;
-  }
-  
-  .dashboard-item img {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-  }
-  
-  .pages-section {
-    margin-bottom: 20px;
-    /* padding-inline-start: 0; */
-  }
-  .pages-list li {
-    list-style: none;
-    margin-bottom: 10px;
-    padding-left: 0;
-  }
-  
-  .pages-list details {
-    margin-bottom: 10px;
-  }
-  
-  .pages-list summary {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    position: relative;
-    list-style: none;
-  }
-  
-  .pages-list summary::before {
-    content: ">";
-    color: #ccc;
-    margin-right: 10px;
-    display: inline-block;
-    transform: rotate(0deg);
-    transition: transform 0.3s ease;
-    font-size: 12px;
-  }
-  
-  .pages-list details[open] summary::before {
-    transform: rotate(90deg);
-  }
-  
-  .left-bar.closed{
-    transform: translateX(-100%);
-  }
-  .left-bar.open{
-    transform: translateX(0);
-  }
+  width: 200px;
+  background-color: #fff;
+  border-right: 1px solid lightgray;
+  padding: 20px;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.fav-bar {
+  display: flex;
+  gap: 1.5em;
+  justify-content: start;
+  margin-bottom: 10px;
+}
+
+.inactive {
+  color: #b0b0b0;
+}
+
+.fav-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  list-style-type: disc;
+}
+
+.fav-list li {
+  margin: 0;
+  text-align: start;
+  padding: 0;
+  cursor: pointer;
+}
+
+
+.fav-list li::marker {
+  color: #ccc;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.dashboard-section {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-weight: bold;
+  text-align: left;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.dashboard-values {
+  list-style: none;
+  padding: 1em;
+}
+
+.dashboard-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  padding: 8px;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.black-piece {
+  display: none;
+  width: 4px;
+  height: 20px;
+  background-color: black;
+  position: absolute;
+  left: 0;
+  border-radius: 10px;
+}
+
+.dashboard-item:hover {
+  background-color: rgba(28, 28, 28, 0.05);
+}
+
+.dashboard-item:hover .black-piece {
+  display: block;
+  transition: all 0.3s ease-in-out;
+}
+
+.dashboard-item img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.pages-section {
+  margin-bottom: 20px;
+}
+
+.pages-list li {
+  list-style: none;
+  margin-bottom: 10px;
+  padding-left: 0;
+}
+
+.pages-list details {
+  margin-bottom: 10px;
+}
+
+.pages-list summary {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+}
+
+.pages-list summary::before {
+  content: ">";
+  color: #ccc;
+  margin-right: 10px;
+  display: inline-block;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+  font-size: 12px;
+}
+
+.pages-list details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.left-bar.closed {
+  transform: translateX(-100%);
+}
+
+.left-bar.open {
+  transform: translateX(0);
+}
+
+.left-bar.light {
+  background-color: white;
+  color: black;
+}
+
+.left-bar.dark {
+  background-color: #333;
+  color: white;
+}

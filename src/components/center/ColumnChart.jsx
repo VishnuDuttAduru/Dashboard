@@ -2,12 +2,13 @@ import React from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
-const ColumnChart = () => {
+const ColumnChart = ({ isDarkMode }) => {
     const options = {
         chart: {
             type: 'column',
             backgroundColor: 'transparent',
-            height: 200
+            height: 200,
+            width: 450
         },
         legend: {
             enabled: false
@@ -49,7 +50,7 @@ const ColumnChart = () => {
             {
                 name: 'Projected',
                 data: [10_000_000, 15_000_000, 20_000_000, 25_000_000, 15_000_000, 20_000_000],
-                color: 'rgba(0, 123, 255, 1)', 
+                color: 'rgba(0, 123, 255, 1)',
             },
             {
                 name: 'Actual',
@@ -57,9 +58,19 @@ const ColumnChart = () => {
                 color: 'rgba(135, 206, 250, 1)',
             },
         ],
+        credits: {
+            enabled: false,
+        }
     };
 
-    return <HighchartsReact highcharts={Highcharts} options={options} />;
+    return (
+        <div className={`column-chart ${isDarkMode ? 'dark' : 'light'}`}>
+            <HighchartsReact
+                highcharts={Highcharts}
+                options={options}
+            />
+        </div>
+    );
 };
 
 export default ColumnChart;

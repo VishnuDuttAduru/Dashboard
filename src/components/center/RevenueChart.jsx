@@ -2,10 +2,13 @@ import React from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
-const RevenueChart = () => {
+const RevenueChart = ({ isDarkMode }) => {
     const options = {
         chart: {
             type: 'spline',
+            backgroundColor: 'transparent',
+            width: 600,
+            height: 250
         },
         title: {
             text: '',
@@ -53,6 +56,9 @@ const RevenueChart = () => {
         tooltip: {
             valueSuffix: ' millions',
         },
+        credits: {
+            enabled: false,
+        }
     };
     return (
         <div>

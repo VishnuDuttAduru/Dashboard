@@ -1,3 +1,18 @@
 .right-bar {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.right-bar.light {
+    background-color: white;
+    color: black;
+}
+
+.right-bar.dark {
+    background-color: #333;
+    color: white;
 }

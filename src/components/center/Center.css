@@ -3,6 +3,11 @@
     border-right: 1px solid lightgray;
 }
 
+.center-content>h2 {
+    display: flex;
+    align-items: center;
+}
+
 .nav-bar {
     height: 5vh;
     border-bottom: 1px solid lightgrey;
@@ -67,6 +72,9 @@
 
 .center-content {
     padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .commerce-grid {
@@ -77,25 +85,51 @@
     margin-top: 20px;
 }
 
-.commerce-container {
+.chart-box-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    width: calc(100% - 30em);
-    height: 200px;
-    padding: 20px;
+    align-items: center;
+    flex-wrap: nowrap;
+    height: 40%;
+    padding: 10px 10px;
+    width: 60vw;
+    gap: 4rem;
+}
+
+.commerce-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    place-items: center;
+    gap: 20px;
+    padding: 10px 0;
+    width: 85%;
     border-radius: 16px;
-    position: relative;
+}
+
+.chart-container {
+    padding: 12px;
+    gap: 16px;
+    border-radius: 16px;
+    background-color: rgba(247, 249, 251, 1);
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    right: 10%;
 }
 
 .commerce-box {
-    width: 150px;
-    height: 70px;
+    width: 100%;
+    max-width: 180px;
+    height: auto;
     border-radius: 16px;
     padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .commerce-box-content h3 {
@@ -124,10 +158,6 @@
     font-size: 14px;
 }
 
-.commerce-box {
-    position: absolute;
-}
-
 .commerce-box:nth-child(1) {
     top: 0;
     left: 0;
@@ -148,20 +178,88 @@
     right: 0;
 }
 
-.chart-box-container {
+.revenue-section {
+    padding: 1em;
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
 }
 
-.chart-container {
-    width: 432px;
-    min-width: 400px;
-    padding: 24px;
-    gap: 16px;
-    border-radius: 16px;
+.chart-container h3,
+.revenue-chart h3,
+.table-container h3,
+.total-sales h3 {
+    text-align: start;
+    margin-bottom: 1em;
+}
+
+.revenue-chart {
+    padding: 2em;
     background-color: rgba(247, 249, 251, 1);
+    border-radius: 16px;
     opacity: 1;
+}
+
+.revenue-location {
+    width: 25%;
+    background-color: rgba(247, 249, 251, 1);
+    border-radius: 16px;
+    padding: 10px;
+}
+
+.sales-section {
+    padding: 1em;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+}
+
+.table-container {
+    width: calc(100% - 350px);
+    padding: 2em;
+    background-color: rgba(247, 249, 251, 1);
+    border-radius: 16px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    border-bottom: 2px solid lightgray;
+    padding: 10px;
+    text-transform: capitalize;
+}
+
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+.total-sales {
+    padding: 10px;
+    width: 25%;
+    background-color: rgba(247, 249, 251, 1);
+    border-radius: 16px;
+    opacity: 1;
+}
+
+.center.light, 
+.center-content.light,
+.commerce-container.light,
+.chart-box-container.light {
+    background-color: white;
+    color: black;
+}
+
+.center.dark, 
+.center-content.dark,
+.commerce-container.dark,
+.chart-box-container.dark {
+    background-color: #333;
+    color: white;
 }
