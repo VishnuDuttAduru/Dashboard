@@ -1,7 +1,3 @@
-.center {
-    flex: 3;
-    border-right: 1px solid lightgray;
-}
 
 .center-content>h2 {
     display: flex;
@@ -70,13 +66,6 @@
     cursor: pointer;
 }
 
-.center-content {
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
 .commerce-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, 200px);
@@ -85,20 +74,94 @@
     margin-top: 20px;
 }
 
+.center {
+    flex: 3;
+    border-right: 1px solid lightgray;
+    padding: 0 20px;
+}
+
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 2rem; 
+}
+
+
 .chart-box-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
-    height: 40%;
-    padding: 10px 10px;
-    width: 60vw;
-    gap: 4rem;
+    padding: 10px 0;
+    width: 100%; 
+    gap: 2rem; 
+}
+
+
+.revenue-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+
+.revenue-chart {
+    flex: 1; 
+    padding: 2em;
+    background-color: rgba(247, 249, 251, 1);
+    border-radius: 16px;
+}
+
+.revenue-location {
+    width: 25%; 
+    background-color: rgba(247, 249, 251, 1);
+    border-radius: 16px;
+    padding: 10px;
+}
+
+.sales-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap: 2rem; 
+    margin-top: 2rem;
+}
+
+.table-container {
+    flex: 3; 
+    padding: 2em;
+    background-color: rgba(247, 249, 251, 1);
+    border-radius: 16px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid lightgray;
+}
+
+.total-sales {
+    width: 25%; 
+    padding: 10px;
+    background-color: rgba(247, 249, 251, 1);
+    border-radius: 16px;
 }
 
 .commerce-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
     place-items: center;
     gap: 20px;
     padding: 10px 0;
@@ -177,50 +240,12 @@
     bottom: 0;
     right: 0;
 }
-
-.revenue-section {
-    padding: 1em;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-}
-
 .chart-container h3,
 .revenue-chart h3,
 .table-container h3,
 .total-sales h3 {
     text-align: start;
     margin-bottom: 1em;
-}
-
-.revenue-chart {
-    padding: 2em;
-    background-color: rgba(247, 249, 251, 1);
-    border-radius: 16px;
-    opacity: 1;
-}
-
-.revenue-location {
-    width: 25%;
-    background-color: rgba(247, 249, 251, 1);
-    border-radius: 16px;
-    padding: 10px;
-}
-
-.sales-section {
-    padding: 1em;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-}
-
-.table-container {
-    width: calc(100% - 350px);
-    padding: 2em;
-    background-color: rgba(247, 249, 251, 1);
-    border-radius: 16px;
 }
 
 table {
@@ -240,26 +265,52 @@ td {
     text-align: left;
 }
 
-.total-sales {
-    padding: 10px;
-    width: 25%;
-    background-color: rgba(247, 249, 251, 1);
-    border-radius: 16px;
-    opacity: 1;
-}
-
-.center.light, 
-.center-content.light,
-.commerce-container.light,
-.chart-box-container.light {
-    background-color: white;
-    color: black;
-}
-
-.center.dark, 
+.center.dark,
 .center-content.dark,
 .commerce-container.dark,
 .chart-box-container.dark {
     background-color: #333;
+    color: white;
+}
+
+.commerce-box.dark {
+    background-color: #444;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.chart-container.dark,
+.revenue-chart.dark,
+.revenue-location.dark,
+.table-container.dark,
+.total-sales.dark {
+    background-color: #444;
+    border-color: #555;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+table.dark-table {
+    background-color: #444;
+    color: white;
+    border-color: #555;
+}
+
+th,
+td {
+    border-bottom: 1px solid #555;
+}
+
+th.dark, td.dark {
+    color: white;
+}
+
+
+.search-bar.dark {
+    background-color: #555;
+    color: white;
+}
+
+.search-bar.dark input {
     color: white;
 }

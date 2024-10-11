@@ -20,7 +20,8 @@ const Center = () => {
     const isDarkMode = state?.darkMode;
     const handleToggleClick = () => {
         dispatch({ type: "TOGGLE" });
-    }
+    };
+
     return (
         <>
             <div className={`center ${isDarkMode ? 'dark' : 'light'}`}>
@@ -34,7 +35,7 @@ const Center = () => {
                         </div>
                     </div>
                     <div className="nav-bar-right">
-                        <div className="search-bar">
+                        <div className={`search-bar ${isDarkMode ? 'dark' : ''}`}>
                             <img src={Search} alt="search-bar" />
                             <input type="text" placeholder="Search" />
                             <img src={SearchIcons} alt="search-right-icon" />
@@ -49,15 +50,13 @@ const Center = () => {
                 </div>
                 <div className={`center-content ${isDarkMode ? 'dark' : 'light'}`}>
                     <h2>eCommerce</h2>
-                    <div 
-                        className={`chart-box-container ${isDarkMode ? 'dark' : 'light'}`}
-                    >
+                    <div className={`chart-box-container ${isDarkMode ? 'dark' : 'light'}`}>
                         <div className={`commerce-container ${isDarkMode ? 'dark' : 'light'}`}>
                             {commerceRevenueDetails.map((item, index) => (
                                 <div
                                     key={index}
-                                    className="commerce-box"
-                                    style={{ backgroundColor: item.backgroundColor }}
+                                    className={`commerce-box ${isDarkMode ? 'dark' : ''}`}
+                                    style={{ backgroundColor: isDarkMode ? '#444' : item.backgroundColor }}
                                 >
                                     <div className="commerce-box-content">
                                         <h3>{item.title}</h3>
@@ -76,46 +75,47 @@ const Center = () => {
                         </div>
                     </div>
                     <div className="revenue-section">
-                        <div className="revenue-chart">
+                        <div className={`revenue-chart ${isDarkMode ? 'dark' : 'light'}`}>
                             <h3>Revenue</h3>
                             <RevenueChart isDarkMode={isDarkMode} />
                         </div>
-                        <div className="revenue-location">
+                        <div className={`revenue-location ${isDarkMode ? 'dark' : 'light'}`}>
                             <h3>Revenue By Location</h3>
                             <img src={WorldMap} alt="revenue-world-map" />
                             <RevenueProgress isDarkMode={isDarkMode} />
                         </div>
                     </div>
                     <div className="sales-section">
-                        <div className="table-container">
+                        <div className={`table-container ${isDarkMode ? 'dark' : 'light'}`}>
                             <h3>Top Selling Products</h3>
                             <table className={isDarkMode ? 'dark-table' : 'light-table'}>
                                 <thead>
                                     <tr>
                                         {Object.keys(salesData[0]).map((key) => (
-                                            <th key={key}>{key}</th>
+                                            <th key={key} className={isDarkMode ? 'dark' : ''}>{key}</th>
                                         ))}
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {salesData.map((item, index) => (
                                         <tr key={index}>
-                                            <td>{item.name}</td>
-                                            <td>{item.price}</td>
-                                            <td>{item.quantity}</td>
-                                            <td>{item.amount}</td>
+                                            <td className={isDarkMode ? 'dark' : ''}>{item.name}</td>
+                                            <td className={isDarkMode ? 'dark' : ''}>{item.price}</td>
+                                            <td className={isDarkMode ? 'dark' : ''}>{item.quantity}</td>
+                                            <td className={isDarkMode ? 'dark' : ''}>{item.amount}</td>
                                         </tr>
                                     ))}
                                 </tbody>
                             </table>
                         </div>
-                        <div className="total-sales">
+                        <div className={`total-sales ${isDarkMode ? 'dark' : 'light'}`}>
                             <h3>Total Sales</h3>
                             <SalesChart isDarkMode={isDarkMode} />
                         </div>
                     </div>
                 </div>
-            </div></>
+            </div>
+        </>
     );
 };
 
