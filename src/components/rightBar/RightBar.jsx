@@ -10,9 +10,9 @@ const RightBar = () => {
     const isDarkMode = state?.darkMode;
     return (
         <div className={`right-bar ${isDarkMode ? 'dark' : 'light'}`}>
-            <NotificationsAndActivities/>
-            <Activity/>
-            <Contact/>
+            <NotificationsAndActivities />
+            <Activity />
+            <Contact />
         </div>
     )
 }

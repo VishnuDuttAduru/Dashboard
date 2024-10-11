@@ -1,7 +1,11 @@
 .activity-container {
-    padding-left: 20px;
-    max-width: 400px;
-    margin: 0 auto;
+    padding: 20px;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 16px;
+    background-color: rgba(247, 249, 251, 1);
   }
   
   .activity-title {
@@ -50,3 +54,13 @@
     color: #888;
   }
   
+  .activity-container.dark {
+    background-color: #444;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .activity-container.light {
+    background-color: rgba(247, 249, 251, 1);
+    color: #444;
+  }

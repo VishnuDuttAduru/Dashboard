@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Contact.css";
 import Craig from "../../assets/Male06.svg";
 import Diggs from "../../assets/Male07.svg";
@@ -6,8 +6,11 @@ import Cano from "../../assets/Male08.svg";
 import Morrison from "../../assets/Male11.svg";
 import Lane from "../../assets/Female08.svg";
 import Okumus from "../../assets/Female09.svg";
+import { themeContext } from "../../Context";
 
 const Contact = () => {
+  const { state } = useContext(themeContext);
+    const isDarkMode = state?.darkMode;
   const contactList = [
     {
       avatar: Morrison,
@@ -36,7 +39,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="contact-container">
+    <div className={`contact-container ${isDarkMode ? 'dark' : 'light'}`}>
       <h2 className="contact-title">Contacts</h2>
       <ul className="contact-list">
         {contactList.map((contact, index) => (

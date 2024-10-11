@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Notification.css';
+import { themeContext } from '../../Context';
 
 function NotificationsAndActivities() {
+  const { state } = useContext(themeContext);
+    const isDarkMode = state?.darkMode;
   const notifications = [
     { icon: '🔔', message: 'You have a bug that needs...', timestamp: 'Just now' },
     { icon: '🔔', message: 'New User Registered', timestamp: '56 minutes ago' },
@@ -10,7 +13,7 @@ function NotificationsAndActivities() {
   ];
 
   return (
-    <div className="notifications-and-activities">
+    <div className={`notifications-and-activities ${isDarkMode ? 'dark' : 'light'}`}>
       <h2 className='h2'>Notifications</h2>
       <ul className="notifications-list">
         {notifications.map((notification, index) => (
